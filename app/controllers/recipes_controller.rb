@@ -11,9 +11,11 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = Recipe.new
+        @recipe.rec_ings.build
     end
 
     def create
+        byebug
         @recipe = Recipe.create(recipe_params)
         
         redirect_to recipe_path(@recipe)

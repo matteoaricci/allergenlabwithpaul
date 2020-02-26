@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   delete "/ingredients/:id", to: "ingredients#destroy", as: "destroy_ingredient"
 
   resources :recipes, only: [:index, :show, :new, :create]
+
+  resources :rec_ings, only: [:new, :create]
 end

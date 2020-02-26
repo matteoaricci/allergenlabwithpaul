@@ -3,7 +3,20 @@
 <%= form_for @recipe do |r| %>
     <%= r.label :name %>
     <%= r.text_field :name %>
+    <%= r.label :user_id %>
+    <%= r.collection_select :user_id, User.all, :id, :name %>
+    
+    <%= fields_for :rec_ings do |ri|%>
+        <% ri.label :recipe_id %>
+        <% ri.number_field :name, :value => @recipe.id %>
+        <br>
+        <div>
+        <%= ri.label :ing_quantity, "Quantity" %>
+        <%= ri.number_field :ing_quantity %>
+        <%= ri.label :ingredient_id %>
+        <%= ri.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+        </div>
+    <% end %>
 
-        <%= r.collection_select :user_id, User.all, :id, :name %>
     <%= r.submit %>
 <% end %>
