@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Recipe.destroy_all
+
+matteo = User.create(name: "Matteo")
+
+paul = User.create(name: "Paul")
+
+bnutsmoothie = Recipe.create(name: "Banana Nut Smoothie", user_id: matteo.id)
+
+sfriedrice = Recipe.create(name: "Shrimp Fried Rice", user_id: matteo.id)
