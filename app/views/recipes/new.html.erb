@@ -1,0 +1,9 @@
+<h1>New Recipe Form</h1>
+
+<%= form_for @recipe do |r| %>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+
+        <%= r.collection_select :user_id, User.all, :id, :name %>
+    <%= r.submit %>
+<% end %>

@@ -8,6 +8,8 @@
 User.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
+Allergy.destroy_all
+RecIng.destroy_all
 
 matteo = User.create(name: "Matteo")
 
@@ -22,3 +24,7 @@ shrimp = Ingredient.create(name: "Shrimp")
 rice = Ingredient.create(name: "Rice")
 nut = Ingredient.create(name: "Nut")
 milk = Ingredient.create(name: "Milk")
+
+nutallergy = Allergy.create(user_id: paul.id, ingredient_id: nut.id)
+
+r1 = RecIng.create(ing_quantity: 5, recipe_id: bnutsmoothie.id, ingredient_id: nut.id)

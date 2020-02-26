@@ -1,9 +1,18 @@
 <h1><%= @user.name %></h1>
 
+<h2>Recipes :</h2>
 <ul>
     <% @user.recipes.each do |rec| %>
         <li>
         <%= link_to rec.name, recipe_path(rec) %>
+        </li>
+    <% end %>
+</ul>
+<h2>Allergic to: </h2>
+<ul>
+    <% @user.allergies.each do |a| %>
+        <li>
+        <%= link_to a.ingredient.name, ingredient_path(a.ingredient) %>
         </li>
     <% end %>
 </ul>

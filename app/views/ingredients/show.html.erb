@@ -1,6 +1,12 @@
 <h1><%= @ingredient.name %></h1>
 
-<%# gotta do more stuff w/ recipes later %>
-
+<h2>Found in the Following Recipes: </h2>
+<ul>
+<% @ingredient.recipes.each do |ir| %>
+    <li>
+    <%= link_to ir.name, recipe_path(ir) %>
+    </li>
+<% end %>
+</ul>
 <%= link_to "Back to Index", ingredients_path %>
 <%= link_to "Delete Ingredient", destroy_ingredient_path, method: "DELETE" %>
