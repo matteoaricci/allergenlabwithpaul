@@ -1,9 +1,12 @@
 <h1><%= @user.name %></h1>
 
-
-<% @user.recipes.each do |rec| %>
-    <%= rec.name %>
-<% end %>
+<ul>
+    <% @user.recipes.each do |rec| %>
+        <li>
+        <%= link_to rec.name, recipe_path(rec) %>
+        </li>
+    <% end %>
+</ul>
 
 <%= link_to "Back to Index", users_path %>
 <%= link_to "Delete User", destroy_user_path, method: "DELETE" %>
